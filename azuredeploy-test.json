@@ -3,12 +3,12 @@
     "contentVersion": "1.0.0.0",
     
     "variables": {
-      "appServicePlanName": "onewithangularappemi",
-      "storageAccountName": "onewithangularstorageemi",
+      "appServicePlanName": "starwarsangularapp",
+      "storageAccountName": "starwarsangularstorage",
       "storageAccountType": "Standard_LRS",
       "storageAccountid": "[concat(resourceGroup().id,'/providers/','Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
-      "storageLocation": "East US",
-      "siteName": "onewithangularappemi"
+      "storageLocation": "North Europe",
+      "siteName": "starwarsangularapp"
     },
     "resources": [
       {
@@ -24,7 +24,7 @@
         "apiVersion": "2015-08-01",
         "name": "[variables('appServicePlanName')]",
         "type": "Microsoft.Web/serverfarms",
-        "location": "East US",
+        "location": "North Europe",
         "sku": {
           "name": "Y1",
           "tier": "Dynamic",
@@ -78,7 +78,7 @@
               "[concat('Microsoft.Web/Sites/', variables('siteName'), '/config/appsettings')]"
             ],
             "properties": {
-              "repoUrl": "https://github.com/johnpapa/one-with-angular-api",
+              "repoUrl": "https://github.com/emilverwoerd/starwars-angular-api.git",
               "branch": "master",
               "IsManualIntegration": true
             }
